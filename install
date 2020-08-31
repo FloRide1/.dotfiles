@@ -1,0 +1,4 @@
+./install_zsh
+./install_vim
+sudo apt install lsd
+

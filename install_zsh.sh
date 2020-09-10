@@ -1,5 +1,6 @@
 # Install zsh
 sudo apt-get install zsh
+chsh -s /bin/zsh ${USER}
 # Install ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Choose Theme

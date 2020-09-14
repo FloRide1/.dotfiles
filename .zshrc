@@ -48,13 +48,6 @@ else
   export EDITOR='mvim'
 fi
 
-# Hide user@hostname on shell
-#prompt_context() {
-#	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-# 		prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-# 	fi
-#}
-
 # Alias
 alias ls='lsd'
 

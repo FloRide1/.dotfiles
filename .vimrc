@@ -77,11 +77,51 @@ set autoread
 " User interface
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Make backspace behave as expected
+set backspace=eol,indent,start
+
 " Set the minimal amount of lignes under and above the cursor
 set scrolloff=5
 
+" Show current mode
+set showmode
+
+" Show command being executed
+set showcmd
+
 " Show line number
 set number
+
+" Always show status line
+set laststatus=2
+
+" Enhance command line completion
+set wildmenu
+
+" Set completion behavior, see :help wildmode for details
+set wildmode=longest:full,list:full
+
+" Disable bell completely
+set visualbell
+set t_vb=
+
+" Display whitespace characters
+set list
+set listchars=tab:>─,eol:¬,trail:\ ,nbsp:¤
+
+set fillchars=vert:│
+
+" Briefly show matching braces, parens, etc
+set showmatch
+
+" Enable line wrapping
+set wrap
+
+" Wrap on column 80
+set textwidth=79
+
+" Disable preview window on completion
+set completeopt=longest,menuone
 
 " Enables syntax highlighting
 syntax on
@@ -148,6 +188,15 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Write as root, when you forgot to sudoedit
+cnoreabbrev w!! w !sudo tee % >/dev/null
+
+" Yank from cursor to end of line, to be consistent with C and D
+nnoremap Y y$
+
+" map ; to :
+noremap ; :
+
 " Split Screen
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -161,7 +210,27 @@ map - <C-W>-
 map <M-<> <C-W><
 map <M->> <C-W>>
 
-map <f9> :make
+" Run make silently, then skip the 'Press ENTER to continue'
+noremap <leader>m :silent! :make! \| :redraw!<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Persistence options
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set location of the viminfo file
+set viminfo='20,\"50,<100,n~/.vimtmp/viminfo
+
+" See :h last-position-jump
+augroup last_position_jump
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+" Persistent undo
+if version >= 703
+    set undofile
+    set undodir=~/.vimtmp/undo
+    silent !mkdir -p ~/.vimtmp/undo
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin mappings and options

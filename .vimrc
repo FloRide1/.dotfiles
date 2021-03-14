@@ -1,75 +1,152 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Description:
+"   This is the .vimrc file
+"
+" Maintainer:
+" 	Florian 'FloRide' Reimat
+"
+" Complete_version:
+"   You can find the complete configuration,
+"   including all the plugins used, here:
+"   https://github.com/FloRide1/dotfiles
+"
+" Acknowledgements:
+"   Several elements of this .vimrc come from Pierre Bourdon's config
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-	" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""
+if empty(glob("~/.vim/autoload/plug.vim"))
+    " Ensure all needed directories exist  (Thanks @kapadiamush)
+    execute '!mkdir -p ~/.vim/plugged'
+    execute '!mkdir -p ~/.vim/autoload'
+    " Download the actual plugin manager
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-" --- Plugins ---
+call plug#begin('~/.vim/plugged')
 " Airline :
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Theme :
-Plugin 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 
 " Markdown :
-Plugin 'instant-markdown/vim-instant-markdown', {'rtp': 'after'}
+Plug 'instant-markdown/vim-instant-markdown', {'rtp': 'after'}
 
 " Latex :
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 " Icons :
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " Auto Completion :
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 " Syntax Highlight
-Plugin 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Snippets :
-Plugin 'SirVer/ultisnips'
-Plugin 'thomasfaingnaert/vim-lsp-ultisnips'
-Plugin 'prabirshrestha/asyncomplete-ultisnips.vim'
-
-" Vundle : 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'SirVer/ultisnips'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 
 " AutoSave :
-Plugin '907th/vim-auto-save'
+Plug '907th/vim-auto-save'
 
 " Misc :
-Plugin 'preservim/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
-" --- User Config ---
+" Enable filetype detection for plugins and indentation options
+filetype plugin indent on
+
+" Reload a file when it is changed from the outside
+set autoread
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" User interface
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set the minimal amount of lignes under and above the cursor
+set scrolloff=5
+
+" Show line number
 set number
+
+" Enables syntax highlighting
 syntax on
-set tabstop=4
-set shiftwidth=4
-" set expandtab
+
+" Highlight current line
 set cursorline
-set autoindent
+
+" Enhanced indent
 set smartindent
-set hlsearch
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search options
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Ignore case on search
+set ignorecase
+
+" Ignore case unless there is an uppercase letter in the pattern
+set smartcase
+
+" Move cursor to the matched string
 set incsearch
+
+" Don't highlight matched strings
+set nohlsearch
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation options
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" The length of a tab
+" This is for documentation purposes only,
+" do not change the default value of 8, ever.
+set tabstop=8
+
+" The number of spaces inserted/removed when using < or >
+set shiftwidth=4
+
+" The number of spaces inserted when you press tab.
+" -1 means the same value as shiftwidth
+set softtabstop=-1
+
+" Insert spaces instead of tabs
+set expandtab
+
+" When tabbing manually, use shiftwidth instead of tabstop and softtabstop
+set smarttab
+
+" Set basic indenting (i.e. copy the indentation of the previous line)
+" When filetype detection didn't find a fancy indentation scheme
+set autoindent
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 setlocal nospell
 set spelllang=fr,en_gb,en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-map <f9> :make
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Split Screen
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -83,6 +160,13 @@ map + <C-W>+
 map - <C-W>-
 map <M-<> <C-W><
 map <M->> <C-W>>
+
+map <f9> :make
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin mappings and options
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Vim Lsp
 let g:lsp_diagnostics_enabled = 0 
 
@@ -133,17 +217,10 @@ let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = '-'
 
 
-" --- Theme ---
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 colorscheme onedark
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'onedark'
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line

@@ -7,7 +7,7 @@ fi
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/${USER}/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Define Zsh theme 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -27,7 +27,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # --- Plugins --- 
 plugins=( 
 		git
-		zsh-syntax-highlighting
 		vscode
 	)
 
@@ -50,6 +49,11 @@ fi
 
 # Alias
 alias ls='lsd'
+alias tree='lsd --tree'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
+
+neofetch

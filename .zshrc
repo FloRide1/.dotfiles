@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 
@@ -26,9 +26,10 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # --- Plugins --- 
 plugins=( 
-		git
-		vscode
-	)
+	git
+	zsh-syntax-highlighting
+	vscode
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,9 +43,9 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+	export EDITOR='vim'
 else
-  export EDITOR='mvim'
+	export EDITOR='mvim'
 fi
 
 # Alias

@@ -40,6 +40,9 @@ Plug 'instant-markdown/vim-instant-markdown', {'rtp': 'after'}
 " Latex :
 Plug 'lervag/vimtex'
 
+" Multi Cursors
+" Plug 'terryma/vim-multiple-cursors'
+
 " Icons :
 Plug 'ryanoasis/vim-devicons'
 
@@ -51,6 +54,9 @@ Plug 'mattn/vim-lsp-settings'
 
 " Syntax Highlight
 Plug 'HerringtonDarkholme/yats.vim'
+
+" Code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets :
 Plug 'SirVer/ultisnips'
@@ -155,7 +161,7 @@ set nohlsearch
 " The length of a tab
 " This is for documentation purposes only,
 " do not change the default value of 8, ever.
-set tabstop=8
+set tabstop=4
 
 " The number of spaces inserted/removed when using < or >
 set shiftwidth=4
@@ -165,7 +171,7 @@ set shiftwidth=4
 set softtabstop=-1
 
 " Insert spaces instead of tabs
-set expandtab
+" set expandtab
 
 " When tabbing manually, use shiftwidth instead of tabstop and softtabstop
 set smarttab

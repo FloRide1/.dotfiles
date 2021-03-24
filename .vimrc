@@ -47,10 +47,10 @@ Plug 'lervag/vimtex'
 Plug 'ryanoasis/vim-devicons'
 
 " Auto Completion :
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
 
 " Syntax Highlight
 Plug 'HerringtonDarkholme/yats.vim'
@@ -59,9 +59,9 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets :
-Plug 'SirVer/ultisnips'
-Plug 'thomasfaingnaert/vim-lsp-ultisnips'
-Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+" Plug 'SirVer/ultisnips'
+" Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+" Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 
 " AutoSave :
 Plug '907th/vim-auto-save'
@@ -124,7 +124,7 @@ set showmatch
 set wrap
 
 " Wrap on column 80
-set textwidth=79
+" set textwidth=79
 
 " Disable preview window on completion
 set completeopt=longest,menuone
@@ -219,6 +219,14 @@ map <M->> <C-W>>
 " Run make silently, then skip the 'Press ENTER to continue'
 noremap <leader>m :silent! :make! \| :redraw!<cr>
 
+" Completion Keys [TESTING]
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
 """"""""""""""""""""""""""""""""""""""""""""""""""

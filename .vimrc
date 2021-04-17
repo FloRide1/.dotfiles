@@ -27,6 +27,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('~/.vim/plugged')
+
 " Airline :
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -59,7 +60,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets :
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 " Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 " Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 
@@ -211,7 +212,7 @@ set autoindent
 " Spell
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-setlocal nospell
+setlocal spell
 set spelllang=fr,en_gb,en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 

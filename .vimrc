@@ -74,6 +74,9 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+" Add GDB Debugger
+packadd termdebug
+
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
 

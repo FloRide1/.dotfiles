@@ -2,16 +2,16 @@
 
 copy_and_link () {
 	CURRENT_PATH=$(dirname $(realpath $0))
-	mkdir "${CURRENT_PATH}/Old_File"
+	mkdir -p "${CURRENT_PATH}/Old_File"
 	cp -r "${HOME}/$1" "${CURRENT_PATH}/Old_File/$1"
-	ln -s "${HOME}/$1" "${CURRENT_PATH}/$1"
+	ln -sf "${CURRENT_PATH}/${2-.}/$1" "${HOME}/$1"
 }
 # Install .vimrc file
-copy_and_link .vimrc
+copy_and_link .vimrc vim
 
 # Install .zshrc file
-copy_and_link .zshrc
-copy_and_link .p10k.zsh
+copy_and_link .zshrc zsh
+copy_and_link .p10k.zsh zsh
 
 # Install .gitconfig file
 copy_and_link .gitconfig

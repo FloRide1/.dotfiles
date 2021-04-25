@@ -77,8 +77,6 @@ call plug#end()
 " Add GDB Debugger
 packadd termdebug
 
-let g:termdebug_wide=1
-
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
 
@@ -170,6 +168,9 @@ set cursorline
 
 " Enhanced indent
 set smartindent
+
+" Gdb Config
+let g:termdebug_wide=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Search options

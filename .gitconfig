@@ -1,3 +1,6 @@
 [user]
 	name = FloRide1
 	email = florian.reimat@orange.fr
+
+[core]
+	editor = vim

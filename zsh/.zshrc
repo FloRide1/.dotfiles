@@ -53,6 +53,7 @@ fi
 # Alias
 alias ls='lsd'
 alias tree='lsd --tree'
+alias rm='rm -i'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

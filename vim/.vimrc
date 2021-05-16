@@ -219,7 +219,7 @@ set autoindent
 " Spell
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-setlocal spell
+setlocal nospell
 set spelllang=fr,en_gb,en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 

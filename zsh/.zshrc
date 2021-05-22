@@ -11,6 +11,17 @@ CURRENT_PATH=$(dirname $(realpath $0))
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
+if [ -z "$(ls -A $ZSH/oh-my-zsh.sh)" ];
+then
+	rm -rf ${HOME}/.oh-my-zsh
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+
 # Define Zsh theme 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 

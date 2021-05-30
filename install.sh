@@ -7,6 +7,7 @@ copy_and_link () {
 	ln -sf "${CURRENT_PATH}/${2-.}/$1" "${HOME}/$1"
 }
 
+# TODO: Setup Nix Package Manager
 # TODO: Add vim / neovim installation
 # TODO: Add zsh installation
 # TODO: Add oh-my-zsh installation

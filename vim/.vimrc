@@ -68,6 +68,8 @@ Plug 'SirVer/ultisnips'
 " AutoSave :
 Plug '907th/vim-auto-save'
 
+" Doxygen :
+
 " Misc :
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'

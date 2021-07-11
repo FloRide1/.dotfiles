@@ -3,8 +3,8 @@
 This is a minimal configuration folder made by Florian FloRide Reimat
 
 ## TODO:
-Update zshrc
-Use Nix Manager
+ [ ] Update zshrc
+ [ ] Use Nix Manager
 
 ## Install
 ```sh

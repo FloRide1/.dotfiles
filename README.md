@@ -3,6 +3,7 @@
 This is a minimal configuration folder made by Florian FloRide Reimat
 
 ## TODO:
+- [ ] vim : Doxygen
 - [ ] Update zshrc
 - [ ] Use Nix Manager
 

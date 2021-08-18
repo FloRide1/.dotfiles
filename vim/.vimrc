@@ -102,6 +102,9 @@ set nowritebackup
 " Coc Give more space for displaying messages.
 set cmdheight=2
 
+" Clipboard
+set clipboard=unnamedplus
+
 " Coc Having longer update time leads is boring
 set updatetime=300
 

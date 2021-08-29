@@ -37,7 +37,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
 
 " Markdown :
-Plug 'instant-markdown/vim-instant-markdown', {'rtp': 'after'}
+Plug 'instant-markdown/vim-instant-markdown'
 
 " Latex :
 Plug 'lervag/vimtex'

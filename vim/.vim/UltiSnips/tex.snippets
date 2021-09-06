@@ -22,7 +22,10 @@ endsnippet
 snippet "\\start" "Start Template" rb
 \documentclass[fleqn]{article}
 
+\usepackage{blindtext}
+\usepackage{cancel}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{color}
@@ -30,7 +33,7 @@ snippet "\\start" "Start Template" rb
 \graphicspath{{./Images/}}
 
 \title{$1}
-\author{Florian Reimat (A)}
+\author{Florian Reimat}
 
 \begin{document}
 	\maketitle
@@ -47,7 +50,6 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
-context "math()"
 snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet

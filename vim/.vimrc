@@ -303,9 +303,9 @@ endif
 " inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 " Ulti Snips
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Nerd Tree
 nnoremap <leader>n :NERDTreeFocus<CR>

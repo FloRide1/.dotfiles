@@ -22,6 +22,7 @@ endsnippet
 snippet "\\start" "Start Template" rb
 \documentclass[fleqn]{article}
 
+\usepackage{pgfplots}
 \usepackage{blindtext}
 \usepackage{cancel}
 \usepackage{amsmath}
@@ -29,6 +30,9 @@ snippet "\\start" "Start Template" rb
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{tikz,tkz-tab}
+
+\everymath{\displaystyle}
 
 \graphicspath{{./Images/}}
 
@@ -68,12 +72,10 @@ snippet != "equals" iA
 \neq
 endsnippet
 
-context "math()"
 snippet ceil "ceil" iA
 \left\lceil $1 \right\rceil $0
 endsnippet
 
-context "math()"
 snippet floor "floor" iA
 \left\lfloor $1 \right\rfloor$0
 endsnippet
@@ -120,7 +122,6 @@ snippet lra "leftangle rightangle" iA
 \left<${1:${VISUAL}} \right>$0
 endsnippet
 
-context "math()"
 snippet case "cases" wA
 \begin{cases}
 	$1
@@ -157,36 +158,24 @@ snippet '(?<!i)sts' "text subscript" irA
 _\text{$1} $0
 endsnippet
 
-context "math()"
 snippet tt "text" iA
 \text{$1}$0
 endsnippet
 
-priority 200
-context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-
 priority 100
-context "math()"
 snippet -> "to" iA
 \to
 endsnippet
 
 priority 200
-context "math()"
 snippet <-> "leftrightarrow" iA
 \leftrightarrow
 endsnippet
 
-context "math()"
 snippet !> "mapsto" iA
 \mapsto
 endsnippet
 
-context "math()"
 snippet invs "inverse" iA
 ^{-1}
 endsnippet
@@ -210,4 +199,12 @@ endsnippet
 
 snippet >= "geq" iA
 \ge
+endsnippet
+
+snippet partialf "partial" i
+\frac{\partial f}{\partial $1}$0
+endsnippet
+
+snippet vecn "vector nabla" iA
+\vec{\nabla}
 endsnippet

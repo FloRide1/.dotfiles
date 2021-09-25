@@ -34,6 +34,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Theme :
+Plug 'jacoborus/tender.vim'
 Plug 'joshdick/onedark.vim'
 
 " Markdown :
@@ -492,6 +493,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Theme
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme onedark
+colorscheme tender
+" colorscheme onedark
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'onedark'

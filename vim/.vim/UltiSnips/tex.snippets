@@ -86,6 +86,12 @@ snippet pmat "pmat" iA
 \end{pmatrix} $0
 endsnippet
 
+snippet vmat "vmat" iA
+\begin{vmatrix} 
+	$1 
+\end{vmatrix} $0
+endsnippet
+
 snippet bmat "bmat" iA
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
@@ -201,7 +207,11 @@ snippet >= "geq" iA
 \ge
 endsnippet
 
-snippet partialf "partial" i
+snippet partial "partial" i
+\frac{\partial $1}{\partial $3}$0
+endsnippet
+
+snippet partialf "partialf" i
 \frac{\partial f}{\partial $1}$0
 endsnippet
 

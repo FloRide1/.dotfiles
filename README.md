@@ -1,4 +1,7 @@
 # .dotfiles
+This repository is "deprecated" now i use a nixhome dotfile:
+https://github.com/FloRide1/nixhome
+
 ## About
 This is a minimal configuration folder made by Florian FloRide Reimat
 
